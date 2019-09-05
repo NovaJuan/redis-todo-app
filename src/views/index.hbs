@@ -1,0 +1,15 @@
+{{> header }}
+<div class="container">
+  <ul>
+    {{#if todos}}
+      {{#each todos}}
+        <li><a href="/delete/{{{id}}}">{{{todo}}}</a></li>
+      {{/each}}
+    {{else}}
+      <li>No todos by now.</li>
+    {{/if}}
+  </ul>
+  <form action="/add" method="post">
+    <input type="text" name='todo' required placeholder="ToDo"><button type="submit" class="btn">Add</button>
+  </form>
+</div>
